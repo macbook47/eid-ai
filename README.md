@@ -1,22 +1,82 @@
-# [twitterbio.io](https://www.twitterbio.io/)
+# UcapanLebaran.AI 🌙✨
 
-This project generates Twitter (X) bios for you using Together AI.
+Generate beautiful and meaningful Eid greetings in seconds using AI. Available in both Bahasa Indonesia and English.
 
-[![Twitter Bio Generator](./public/screenshot.png)](https://www.twitterbio.io)
+## ✨ Features
 
-## How it works
+- 🤖 AI-powered greeting generation using Together AI
+- 🌐 Bilingual support (Bahasa Indonesia & English)
+- 🎨 Multiple greeting styles:
+  - Formal (Formal dan sopan)
+  - Casual (Santai dan akrab)
+  - Religious (Religius dan penuh makna)
+  - Funny (Lucu dan menghibur)
+- 📱 Mobile-responsive design
+- ✂️ One-click copy to clipboard
+- 🎉 Beautiful UI with animations
 
-This project uses both [Mixtral 8x7B](https://api.together.xyz/playground/chat/mistralai/Mixtral-8x7B-Instruct-v0.1) and [Llama 3.1 8B](https://api.together.xyz/playground/chat/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo) with streaming to generate a Twitter bio. It constructs a prompt based on the form and user input, sends it either to the [Together.ai](https://togetherai.link/) API, then streams the response back to the application.
+## 🚀 Tech Stack
 
-If you'd like to see how I built an older version of this app with GPT 3.5, check out the [video](https://youtu.be/JcE-1xzQTE0) or [blog post](https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions).
+- [Next.js 14](https://nextjs.org/) - React Framework
+- [Together AI](https://together.ai/) - AI Model Provider
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [TypeScript](https://www.typescriptlang.org/) - Type Safety
+- [Vercel](https://vercel.com) - Deployment
 
-## Running Locally
+## 🛠️ Getting Started
 
-1. Create a `.env` file, make an account at [Together.ai](https://togetherai.link/), and add your API key under `TOGETHER_API_KEY`
-2. Run the application with `npm run dev` and it will be available at `http://localhost:3000`.
+1. Clone the repository:
+```bash
+git clone https://github.com/macbook47/eid-ai.git
+cd eid-ai
+```
 
-## One-Click Deploy
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+3. Create a `.env` file in the root directory and add your Together AI API key:
+```env
+TOGETHER_API_KEY=your_api_key_here
+```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Nutlope/twitterbio&env=TOGETHER_API_KEY&project-name=twitter-bio-generator&repo-name=twitterbio)
+4. Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🌟 How to Use
+
+1. Choose your preferred language (Bahasa Indonesia/English)
+2. Enter keywords or inspiration for your greeting
+3. Select your preferred greeting style
+4. Click "Generate" and get multiple AI-generated greetings
+5. Click on any greeting to copy it to your clipboard
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Credits
+
+- Created by [Faizudin Al Hamawi](https://github.com/macbook47)
+- Based on [twitterbio](https://github.com/Nutlope/twitterbio) by Nutlope
+- Powered by [Together AI](https://together.ai/)
+
+## 🔗 Links
+
+- [GitHub](https://github.com/macbook47/eid-ai)
+- [Twitter](https://x.com/aphip_al)
+- [LinkedIn](https://www.linkedin.com/in/faizudin-al-hamawi-a1939349/)
+- [Medium](https://medium.com/@macbook.47)
+
+---
+
+Made with ❤️ for Eid celebrations
