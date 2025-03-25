@@ -106,111 +106,114 @@ Use the following context as inspiration: ${bio}${bio.slice(-1) === "." ? "" : "
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen bg-white">
       {showSplash && <SplashScreen onClose={() => setShowSplash(false)} />}
       <Header />
-      <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-        <div className="absolute top-5 right-5">
+      <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-3 sm:px-4 mt-8 sm:mt-20">
+        <div className="w-full flex justify-end px-2 sm:px-0 mb-4">
           <button
             onClick={() => setLanguage(lang => lang === "id" ? "en" : "id")}
-            className="bg-white px-4 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-gray-50 transition border border-gray-200 card-hover"
+            className="bg-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-gray-50 transition border border-gray-200 card-hover"
           >
-            {language === "id" ? "🇬🇧 English" : "🇮🇩 Bahasa"}
+            {language === "id" ? "🇬🇧 EN" : "🇮🇩 ID"}
           </button>
         </div>
-        <div className="floating">
-          <p className="bg-emerald-50 rounded-2xl py-2 px-6 text-emerald-700 text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out card-shadow">
+        
+        <div className="floating w-full max-w-md sm:max-w-lg px-2">
+          <p className="bg-emerald-50 rounded-xl sm:rounded-2xl py-2 px-4 sm:px-6 text-emerald-700 text-xs sm:text-sm mb-4 sm:mb-5 hover:scale-105 transition duration-300 ease-in-out card-shadow">
             ✨ {language === "id" ? "Buat ucapan Lebaran yang berkesan" : "Create memorable Eid greetings"} ✨
           </p>
         </div>
-        <h1 className="sm:text-4xl text-2xl max-w-[708px] font-bold text-slate-900 mb-8">
+
+        <h1 className="text-2xl sm:text-3xl md:text-4xl max-w-[708px] font-bold text-slate-900 mb-6 sm:mb-8 px-2">
           {language === "id" ? "Buat Ucapan Idul Fitri dengan " : "Create Eid Greetings with "}
           <span className="text-emerald-600">AI</span>
         </h1>
-        <div className="mt-7 mb-12">
+
+        <div className="mt-4 sm:mt-7 mb-8 sm:mb-12">
           <Toggle isGPT={isLlama} setIsGPT={setIsLlama} />
         </div>
 
-        <div className="max-w-xl w-full bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-hover">
-          <div className="flex mt-3 items-center space-x-3">
-            <div className="bg-emerald-50 rounded-full p-2 floating">
-              <Image
-                src="/1-black.png"
-                width={30}
-                height={30}
-                alt="1 icon"
-                className="mb-0"
-              />
+        <div className="w-full max-w-xl bg-white p-4 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 card-hover mx-2">
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="bg-emerald-50 rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center floating flex-shrink-0">
+              <span className="text-base sm:text-lg font-semibold text-emerald-600">1</span>
             </div>
-            <p className="text-left font-medium text-slate-700">
+            <p className="text-left text-sm sm:text-base font-medium text-slate-700">
               {language === "id" ? (
                 <>
                   Masukkan kata-kata kunci atau inspirasi{" "}
-                  <span className="text-slate-500">(contoh: keluarga, teman, atau rekan kerja)</span>
+                  <span className="text-slate-500 block text-xs sm:text-sm mt-0.5">(contoh: keluarga, teman, atau rekan kerja)</span>
                 </>
               ) : (
                 <>
                   Enter keywords or inspiration{" "}
-                  <span className="text-slate-500">(e.g., family, friends, or colleagues)</span>
+                  <span className="text-slate-500 block text-xs sm:text-sm mt-0.5">(e.g., family, friends, or colleagues)</span>
                 </>
               )}
             </p>
           </div>
+
           <textarea
             value={bio}
             onChange={(e) => setBio(e.target.value)}
             rows={4}
-            className="w-full rounded-xl border-gray-200 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 my-5"
+            className="w-full rounded-xl border-gray-200 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 my-4 sm:my-5 text-sm sm:text-base"
             placeholder={language === "id" ? "contoh: ucapan untuk keluarga besar" : "example: greetings for extended family"}
           />
-          <div className="flex mb-5 items-center space-x-3">
-            <div className="bg-emerald-50 rounded-full p-2 floating">
-              <Image src="/2-black.png" width={30} height={30} alt="2 icon" />
+
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="bg-emerald-50 rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center floating flex-shrink-0">
+              <span className="text-base sm:text-lg font-semibold text-emerald-600">2</span>
             </div>
-            <p className="text-left font-medium text-slate-700">
+            <p className="text-left text-sm sm:text-base font-medium text-slate-700">
               {language === "id" ? "Pilih gaya ucapan." : "Choose greeting style."}
             </p>
           </div>
+
           <div className="block mb-4">
             <DropDown vibe={vibe} setVibe={(newVibe) => setVibe(newVibe)} language={language} />
           </div>
+
           {loading ? (
             <button
-              className="bg-emerald-600 rounded-xl text-white font-medium px-4 py-3 sm:mt-8 mt-6 hover:bg-emerald-700 w-full transition duration-300 ease-in-out transform hover:scale-[1.02] disabled:opacity-50"
+              className="bg-emerald-600 rounded-xl text-white font-medium px-4 py-3 sm:mt-8 mt-6 hover:bg-emerald-700 w-full transition duration-300 ease-in-out transform hover:scale-[1.02] disabled:opacity-50 text-sm sm:text-base"
               disabled
             >
               <LoadingDots color="white" style="large" />
             </button>
           ) : (
             <button
-              className="shine-effect bg-emerald-600 rounded-xl text-white font-medium px-4 py-3 sm:mt-8 mt-6 hover:bg-emerald-700 w-full transition duration-300 ease-in-out transform hover:scale-[1.02]"
+              className="shine-effect bg-emerald-600 rounded-xl text-white font-medium px-4 py-3 sm:mt-8 mt-6 hover:bg-emerald-700 w-full transition duration-300 ease-in-out transform hover:scale-[1.02] text-sm sm:text-base"
               onClick={(e) => generateBio(e)}
             >
               {language === "id" ? "Buat Ucapan Lebaran ✨" : "Generate Eid Greetings ✨"}
             </button>
           )}
         </div>
+
         <Toaster
           position="top-center"
           reverseOrder={false}
           toastOptions={{ duration: 2000 }}
         />
-        <div className="space-y-10 my-10">
+
+        <div className="space-y-8 sm:space-y-10 my-8 sm:my-10 w-full px-2">
           {generatedBios && (
             <>
               <div>
                 <h2
-                  className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto mb-8"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mx-auto mb-6 sm:mb-8"
                   ref={bioRef}
                 >
                   {language === "id" ? "Ucapan Lebaran Anda ✨" : "Your Eid Greetings ✨"}
                 </h2>
               </div>
-              <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
+              <div className="space-y-6 sm:space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto w-full">
                 {generatedBios
                   .substring(generatedBios.indexOf("1") + 3)
                   .split(/2\.|3\./)
                   .map((generatedBio, index) => {
                     return (
                       <div
-                        className="bg-white rounded-xl shadow-lg p-6 hover:bg-gray-50 transition cursor-copy border border-gray-100 w-full card-hover"
+                        className="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:bg-gray-50 transition cursor-copy border border-gray-100 w-full card-hover"
                         onClick={() => {
                           navigator.clipboard.writeText(generatedBio);
                           toast(language === "id" ? "Ucapan disalin ke clipboard" : "Greeting copied to clipboard", {
@@ -219,7 +222,7 @@ Use the following context as inspiration: ${bio}${bio.slice(-1) === "." ? "" : "
                         }}
                         key={index}
                       >
-                        <p className="text-slate-700">{generatedBio}</p>
+                        <p className="text-slate-700 text-sm sm:text-base">{generatedBio}</p>
                       </div>
                     );
                   })}

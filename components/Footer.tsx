@@ -12,8 +12,9 @@ export default function Footer() {
           className="font-bold hover:underline transition underline-offset-2"
         >
           Together AI
-        </a>
-         -Created based on{' '}
+        </a></div>
+        <div>
+         Created based on{' '}
         <a
           href="https://github.com/Nutlope/twitterbio"
           target="_blank"
