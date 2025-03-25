@@ -12,11 +12,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-let title = "Tweetbio – AI Twitter Bio Generator";
-let description = "Generate your next Twitter bio in seconds";
-let url = "https://www.twitterbio.io/";
-let ogimage = "https://www.twitterbio.io/og-image.png";
-let sitename = "twitterbio.io";
+let title = "UcapanLebaran.AI – Generator Ucapan Idul Fitri";
+let description = "Buat ucapan Lebaran yang berkesan dengan bantuan AI dalam hitungan detik";
+let url = "https://www.ucapanlebaran.ai/";
+let ogimage = "https://www.ucapanlebaran.ai/og-image.png";
+let sitename = "ucapanlebaran.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
